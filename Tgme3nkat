@@ -59,8 +59,8 @@ except ImportError:
             print("Failed to install requests with pip and pip:", str(e))
             exit(0)
 import json
-API_ID =  8 
-API_HASH =  7245de8e747a0d6fbe11f7cc14fcc0bb 
+API_ID = '8'
+API_HASH = '7245de8e747a0d6fbe11f7cc14fcc0bb'
 bot_token = ""
 running_processes = {}
 try:
@@ -190,7 +190,7 @@ async def background_task(phonex, bot_username, sudo, send_to):
                                 big=True,
                                 add_to_recent=True,
                                 reaction=[types.ReactionEmoji(
-                                    emoticon= 👍 
+                                    emoticon='👍'
                                 )]
                             ))
                         except Exception as e:
@@ -243,7 +243,7 @@ async def background_task(phonex, bot_username, sudo, send_to):
                                 big=True,
                                 add_to_recent=True,
                                 reaction=[types.ReactionEmoji(
-                                    emoticon= 👍 
+                                    emoticon='👍'
                                 )]
                             ))
                         except Exception as e:
@@ -411,7 +411,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
                 ],
             ]
             reply_markup = InlineKeyboardMarkup(keyboard)
-            await update.message.reply_text("مرحبا بك في سورس التجميع الخاص ببوتات ايكو :\n\n- اشترك في قناة تحديثات بوت التجميع : @lightiningSource\n\n- سرعة التجميع : " + str(info["sleeptime"]), reply_markup=reply_markup)
+            await update.message.reply_text("مرحبا بك في سورس التجميع الخاص ببوتات ايكو :\n\n- اشترك في قناة تحديثات بوت التجميع : @Echo_Auto\n\n- سرعة التجميع : " + str(info["sleeptime"]), reply_markup=reply_markup)
         elif str(update.message.chat.id) in info["admins"]:
             what_need_to_do_echo[str(update.message.chat.id)] = ""
             keyboard = [
@@ -430,7 +430,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 def contact_validate(text):
     text = str(text)  
     if len(text) > 0:
-        if text[0] ==  + :
+        if text[0] == '+':
             if text[1:].isdigit():
                 return True
     return False
@@ -572,7 +572,7 @@ async def echoMaker(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             ]))
             directory_path = Path(f"echo_ac/{update.message.chat.id}")
             file_list = [file.name for file in directory_path.iterdir(
-            ) if file.is_file() and file.name.endswith( .session )]
+            ) if file.is_file() and file.name.endswith('.session')]
             file_list = list(set(file_list))
             for filename in file_list:
                 filename = filename.split(".")[0]
@@ -618,7 +618,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         elif (str(query.message.chat.id) in info["admins"]):
             directory_path = Path(f"echo_ac/{query.message.chat.id}")
             file_list = [file.name for file in directory_path.iterdir(
-            ) if file.is_file() and file.name.endswith( .session )]
+            ) if file.is_file() and file.name.endswith('.session')]
             file_list = list(set(file_list))
             if (int(len(file_list)) <= int(info["admins"][str(query.message.chat.id)])):
                 what_need_to_do_echo[str(query.message.chat.id)] = query.data
@@ -709,7 +709,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     elif (query.data == "delecho"):
         directory_path = Path(f"echo_ac/{query.message.chat.id}")
         file_list = [file.name for file in directory_path.iterdir(
-        ) if file.is_file() and file.name.endswith( .session )]
+        ) if file.is_file() and file.name.endswith('.session')]
         file_list = list(set(file_list))
         keyboard = []
         for filename in file_list:
@@ -744,7 +744,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     elif (query.data == "myecho"):
         directory_path = Path(f"echo_ac/{query.message.chat.id}")
         file_list = [file.name for file in directory_path.iterdir(
-        ) if file.is_file() and file.name.endswith( .session )]
+        ) if file.is_file() and file.name.endswith('.session')]
         file_list = list(set(file_list))
         keyboard = []
         if str(query.message.chat.id) not in running_processes:
